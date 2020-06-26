@@ -1,0 +1,2515 @@
+
+ENDOFF;
+BKCOLOR = 0;
+RUNTIME;
+ACTIONS
+       
+        WOPEN 1, 1, 1, 20, 77, 7
+        ACTIVE 1
+        DISPLAY "
+               Vitajte v diagnostickom znalostnom systeme. 
+     Tento system je urceny pre majitelov psov, ktori spozorovali u psa 
+          neobvykle priznaky a zmeny spravania, ale nie su si isti, 
+                ci je potrebne vyhladat veterinarnu pomoc.
+
+
+    Pri zvoleni odpovede mate moznost pouzit aj takzvany faktor istoty
+   v intervale 1 az 100. Cim vyssia je tato hodnota, tym vyssia je miera 
+   istoty Vasej odpovede. Pre zvolenie faktoru istoty sa najprv presunte 
+     na odpoved, ktoru chcete zvolit, nasledne stlacte klaves HOME a 
+   napiste ciselnu hodnotu. Pre potvrdenie hodnoty stlacte klaves ENTER 
+       a pre potvrdenie Vasej volby stlacte druhy raz klaves ENTER.
+
+
+           Stlacte ktorukolvek klavesu pre zacatie konzultacie.~"
+        CLS
+        FIND Vysledok
+        FIND Zaver
+
+        DISPLAY "
+Vas vysledok je: {#Vysledok} {Zaver}.
+
+
+
+
+            Stlacte ktorykolvek klaves pre ukoncenie konzultacie.~"
+
+
+;
+
+        
+        
+
+
+RULE 1
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano
+THEN    DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 60;
+
+
+RULE 2
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 80;
+
+
+RULE 3
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 70;
+
+
+RULE 4
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 80;
+
+
+RULE 5
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 75;
+
+RULE 6
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 85;
+
+
+RULE 7
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 75;
+
+
+RULE 8
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 90;
+
+
+RULE 9
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 80;
+
+
+RULE 10
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 90;
+
+
+RULE 11
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 85;
+
+
+RULE 12
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 95;
+
+
+RULE 13
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 60;
+
+
+RULE 14
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 65;
+
+
+RULE 15
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 70;
+
+
+RULE 16
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 70;
+
+
+RULE 17
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 75;
+
+
+RULE 18
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 65
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+RULE 19
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 75;
+
+
+RULE 20
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 75;
+
+
+RULE 21
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 80;
+
+
+RULE 22
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 90;
+
+
+RULE 23
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 90;
+
+
+RULE 24
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 95;
+
+
+RULE 25
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 95;
+
+
+RULE 26
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 95;
+
+
+RULE 27
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu;
+
+
+RULE 28
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 75;
+
+
+RULE 29
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 65;
+
+
+RULE 30
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 90;
+
+
+RULE 31
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 75;
+
+
+RULE 32
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 75;
+
+RULE 33
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 85;        
+
+
+RULE 34
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 65
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patrimedzi 
+rizikovu skupinu. Pokial by pes aj nadalej vyrazne a bez priciny chudol
+alebo by u neho pretrvavali akekolvek ine priznaky ci problemy, 
+vyhladajte veterinarnu pomoc.";
+
+
+RULE 35
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 80
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patrimedzi 
+rizikovu skupinu. Pokial by pes aj nadalej vyrazne a bez priciny chudol
+alebo by u neho pretrvavali akekolvek ine priznaky ci problemy, 
+vyhladajte veterinarnu pomoc.";
+
+
+RULE 36
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Ano AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 60
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patrimedzi 
+rizikovu skupinu. Pokial by pes aj nadalej vyrazne a bez priciny chudol
+alebo by u neho pretrvavali akekolvek ine priznaky ci problemy, 
+vyhladajte veterinarnu pomoc.";
+
+
+RULE 37
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 75
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, novzhladom 
+k jeho nizkemu veku sa moze jednat aj o ine ochorenie. V pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladajte 
+veterinarnu pomoc.";
+
+
+RULE 38
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 60
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, novzhladom 
+k jeho nizkemu veku sa moze jednat aj o ine ochorenie. V pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladajte 
+veterinarnu pomoc.";
+
+
+RULE 39
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 65
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, novzhladom 
+k jeho nizkemu veku sa moze jednat aj o ine ochorenie. V pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladajte 
+veterinarnu pomoc.";
+
+
+RULE 40
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 70
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, novzhladom 
+k jeho nizkemu veku sa moze jednat aj o ine ochorenie. V pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladajte 
+veterinarnu pomoc.";
+
+
+RULE 41
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        DISPLAY "Pes vykazuje znamky vyssieho stadia diabetu." 
+        DISPLAY "Vyhladajte neodkladne veterinarnu pomoc."
+        Vysledok = Vyssie_stadium_diabetu CNF 70;
+
+
+RULE 42
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 75
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, novzhladom 
+k jeho nizkemu veku sa moze jednat aj o ine ochorenie. V pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladajte 
+veterinarnu pomoc.";
+
+
+RULE 43
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 44
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 45
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 46
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 47
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 48
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 49
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 50
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 51
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 52
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+
+RULE 53
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 54
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripade dlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladat veterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane 
+upravit jeho hmotnost.";
+
+
+RULE 55
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu;   
+
+
+RULE 56
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu; 
+
+
+RULE 57
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 70
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, novzhladom 
+k jeho nizkemu veku sa moze jednat aj o ine ochorenie. V pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladajteveterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane
+upravit jeho hmotnost.";
+
+
+RULE 58
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 75
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, novzhladom 
+k jeho nizkemu veku sa moze jednat aj o ine ochorenie. V pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov vyhladajteveterinarnu 
+pomoc. Pre znizenie rizika vzniku diabetu do buducnosti je odporucane
+upravit jeho hmotnost.";
+
+RULE 59
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 75
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 60
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 70
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 61
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 80
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 62
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 50
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 63
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 50
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 64
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 55
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 65
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 50
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 66
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 55
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 67
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 50
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 68
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 55
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 69
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 55
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 70
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 55
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 71
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vyssie_stadium_diabetu CNF 60
+        DISPLAY "Vas pes vykazuje znamky vyssieho stadia diabetu, novzhladom k jeho 
+nizkemu veku sa moze jednat aj o ine ochorenie. 
+Vyhladajte neodkladne veterinarnu pomoc.";
+
+
+RULE 72
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 75
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patri medzi 
+rizikovu skupinu. Odporucame nadalej sledovat stav Vasho psa a v pripade 
+dlhsieho pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 73
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 70
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patri medzi 
+rizikovu skupinu. Odporucame nadalej sledovat stav Vasho psa a v pripade 
+dlhsieho pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 74
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 75
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patri medzi 
+rizikovu skupinu. Odporucame nadalej sledovat stav Vasho psa a v pripade 
+dlhsieho pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 75
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 75
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patri medzi 
+rizikovu skupinu. Odporucame nadalej sledovat stav Vasho psa a v pripade 
+dlhsieho pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 76
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa CNF 80
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 77
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 80
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patri
+medzi rizikovu skupinu. Odporucame nadalej sledovat stav Vasho psa 
+a v pripadedlhsieho pretrvavania akychkolvek priznakov alebo 
+problemov vyhladatveterinarnu pomoc. Pre znizenie rizika vzniku diabetu 
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+RULE 78
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 75
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patri
+medzi rizikovu skupinu. Odporucame nadalej sledovat stav Vasho psa 
+a v pripadedlhsieho pretrvavania akychkolvek priznakov alebo 
+problemov vyhladatveterinarnu pomoc. Pre znizenie rizika vzniku diabetu 
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+RULE 79
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 80
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patri
+medzi rizikovu skupinu. Odporucame nadalej sledovat stav Vasho psa 
+a v pripadedlhsieho pretrvavania akychkolvek priznakov alebo 
+problemov vyhladatveterinarnu pomoc. Pre znizenie rizika vzniku diabetu 
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+RULE 80
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 75
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patri
+medzi rizikovu skupinu. Odporucame nadalej sledovat stav Vasho psa 
+a v pripadedlhsieho pretrvavania akychkolvek priznakov alebo 
+problemov vyhladatveterinarnu pomoc. Pre znizenie rizika vzniku diabetu 
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+RULE 81
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 80
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no vzhladom
+k vyssiemu veku odporucame nadalej sledovat stav Vasho psa
+a v pripadedlhsieho pretrvavania akychkolvek priznakov alebo 
+problemov vyhladatveterinarnu pomoc.";
+
+
+RULE 82
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Nie AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 70
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no vzhladom
+k vyssiemu veku odporucame nadalej sledovat stav Vasho psa
+a v pripadedlhsieho pretrvavania akychkolvek priznakov alebo 
+problemov vyhladatveterinarnu pomoc.";
+
+
+RULE 83
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 80
+        DISPLAY "Vas pes vykazuje znamky pocatiocneho stadia diabetu. Vyhladajte veterinarnu pomoc.";
+
+
+RULE 84
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 85
+        DISPLAY "Vas pes vykazuje znamky pocatiocneho stadia diabetu. Vyhladajte veterinarnu pomoc.";
+
+
+RULE 85
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 85
+        DISPLAY "Vas pes vykazuje znamky pocatiocneho stadia diabetu. Vyhladajte veterinarnu pomoc.";
+
+
+RULE 86
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 85
+        DISPLAY "Vas pes vykazuje znamky pocatiocneho stadia diabetu. Vyhladajte veterinarnu pomoc.";
+
+
+RULE 87
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 70
+        DISPLAY "Vas pes vykazuje znamky pocatiocneho stadia diabetu. Vyhladajte veterinarnu pomoc.";
+
+
+RULE 88
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Pociatocne_stadium_diabetu CNF 75
+        DISPLAY "Vas pes vykazuje znamky pocatiocneho stadia diabetu. Vyhladajte veterinarnu pomoc.";
+
+
+RULE 89
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 90
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 91
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 92
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 93
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 94
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 95
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 96
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 97
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 85
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu avsak preznizenie rizika
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+RULE 98
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu avsak preznizenie rizika
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+
+RULE 99
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu avsak preznizenie rizika
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+RULE 100
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 90
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu avsak preznizenie rizika
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+
+RULE 101
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 85
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu avsak preznizenie rizika 
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+
+RULE 102
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu avsak preznizenie rizika 
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+RULE 103
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu avsak preznizenie rizika 
+do buducnosti je odporucane upravit jeho hmotnost.";
+
+
+RULE 104
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 95
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu. Pokial bypes aj nadalej 
+vyrazne a bez priciny chudol, vyhladajte veterinarnu pomoc.";
+
+
+RULE 105
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 90
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu. Pokial bypes aj nadalej 
+vyrazne a bez priciny chudol, vyhladajte veterinarnu pomoc.";
+
+
+RULE 106
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 85
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu. Pokial bypes aj nadalej 
+vyrazne a bez priciny chudol, vyhladajte veterinarnu pomoc.";
+
+
+RULE 107
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 80
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu. Pokial bypes aj nadalej 
+vyrazne a bez priciny chudol, vyhladajte veterinarnu pomoc.";
+
+
+RULE 108
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 95
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu. Pokial bypes aj nadalej 
+vyrazne a bez priciny chudol, vyhladajte veterinarnu pomoc.";
+
+
+RULE 109
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 90
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu. Pokial bypes aj nadalej 
+vyrazne a bez priciny chudol, vyhladajte veterinarnu pomoc.";
+
+
+RULE 110
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 85
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu. Pokial bypes aj nadalej 
+vyrazne a bez priciny chudol, vyhladajte veterinarnu pomoc.";
+
+
+RULE 111
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Ano AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 85
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu. Pokial bypes aj nadalej 
+vyrazne a bez priciny chudol, vyhladajte veterinarnu pomoc.";
+
+
+RULE 112
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu;
+
+
+RULE 113
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu;
+
+
+RULE 114
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 75;
+
+
+RULE 115
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 95;
+
+
+RULE 116
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 80;
+
+
+RULE 117
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 90;
+
+
+RULE 118
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 65;
+
+
+RULE 119
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 75;
+
+
+RULE 120
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 85;
+
+
+RULE 121
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = B AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 60;
+
+
+RULE 122
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu;
+
+
+RULE 123
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 75;
+
+
+RULE 124
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Nie AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu;
+
+
+RULE 125
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 126
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 127
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 128
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Ano AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 129
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 130
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 131
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = A AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu;
+
+
+RULE 132
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 133
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 134
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 135
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 136
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Pes AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 137
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 138
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Vykazuje_2_a_viac AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 139
+IF      Vek = 3_az_7_rokov AND
+        Pohlavie = Fena AND
+        Plemeno = Nie AND
+        Vaha = C AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 140       
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Ano AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 141
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Nie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 142
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Fena AND
+        Ubytok = Ano AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie 
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa. 
+Pokial by pesaj nadalej vyrazne a bez priciny chudol 
+alebo by u neho pretrvavali akekolvekine priznaky ci 
+problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 143
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Vykazuje_1 AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat stav Vasho psa a v pripadedlhsieho 
+pretrvavania akychkolvek priznakov alebo problemov 
+vyhladat veterinarnu pomoc.";
+
+
+RULE 144
+IF      Vek = Viac_ako_8_rokov AND
+        Pohlavie = Pes AND
+        Ubytok = Nie AND
+        Priznaky = Nevykazuje_ziadny AND
+        Sprievodne_ochorenie = Nie AND
+        Rizikovy_faktor = Ano
+THEN
+        Vysledok = Vas_pes_nevykazuje_znamky_diabetu CNF 95
+        DISPLAY "Vas pes nevykazuje znamky ochorenia diabetu, no patrimedzi 
+rizikovu skupinu. Pokial by sa u psa v buducnosti prejavili akekolvek
+priznaky alebo problemy, vyhladajte veterinarnu pomoc.";
+
+
+RULE 145
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 146
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 147
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 148
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 149
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 150
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_hlad
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 151
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 152
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 153
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 154
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 155
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 156
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+RULE 157
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 158
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Ano AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad
+THEN
+        Vysledok = Priznaky_pociatocneho_stadia_diabetu
+        DISPLAY "Vas pes vykazuje priznaky pociatocneho stadia diabetu, no vzhladom 
+k jeho velmi mlademu veku sa moze jednat aj o celkom ine 
+ochorenie alebo len docasnu zalezitost. Odporucame nadalej 
+sledovat stav psa a v pripade dlhsieho pretrvavania akychkolvek 
+priznakov alebo problemov vyhladat veterinarnu pomoc.";
+
+
+RULE 159
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 160
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 161
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 162
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 163
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 164
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_hlad
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 165
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 166
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 167
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 168
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Ubytok_hmotnosti AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 169
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+
+RULE 170
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+RULE 171
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_hlad AND
+        Priznak = Nadmerne_mocenie
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc.";
+
+RULE 172
+IF      Vek = 1_az_2_roky AND
+        Plemeno = Nie AND
+        Priznak = Unava_a_slabost AND
+        Priznak = Nadmerny_smad AND
+        Priznak = Nadmerny_hlad
+THEN
+        Vysledok = Sledujte_nadalej_stav_Vasho_psa
+        DISPLAY "Odporucame nadalej sledovat priznaky a v pripade ich 
+        pretrvavania vyhladat veterinarnu pomoc."
+ELSE    DISPLAY "Vas pes nevykazuje znamky diabetu"
+        Zaver = Pes_je_zdravy;
+
+
+
+
+
+
+
+
+ASK Vek : "Aky je vek Vasho psa?";
+
+CHOICES Vek : 1_az_2_roky, 3_az_7_rokov, Viac_ako_8_rokov;
+
+ASK Pohlavie : "Ake je pohlavie Vasho psa?";
+
+CHOICES Pohlavie : Pes, Fena;
+
+ASK Plemeno : "Patri Vas pes medzi niektore z nasledujucich plemien: 
+Irsky seter, Anglicky seter, Jorksirsky terier, Trpaslici pudel, 
+Toy pudel, Samojed, Mops, Westhighlandsky biely terier, Maly bradac, 
+Bison,Australsky terier, Svedsky laponsky pes, Svedsky losi pes, 
+Borderska kolia, Drever alebo Bigl?";
+
+CHOICES Plemeno : Ano, Nie;
+
+ASK Priznak : "Ktore z nasledujucich priznakov sa prejavili u Vasho psa?
+Mozte vybrat aj viac moznosti.";
+
+CHOICES Priznak : Ubytok_hmotnosti, Unava_a_slabost, Nadmerny_smad, Nadmerny_hlad, Nadmerne_mocenie;
+
+PLURAL : Priznak;
+
+ASK Vaha : "Ktora z nasledujucich moznosti vystihuje najlepsie vahu Vasho psa?
+
+   A) Pes ma primeranu vahu vzhladom k jeho velkosti
+
+   B) Pes ma nadvahu
+
+   C) Pes mal nadvahu, no v poslednej dobe je 
+   na nom badat vyraznejsi ubytok hmotnosti
+   
+   ";
+
+CHOICES Vaha : A, B,C;
+
+ASK Ubytok : "Vsimli ste si u Vasho psa za poslednu dobu 
+vyraznejsi ubytok hmotnosti?";
+
+CHOICES Ubytok : Ano, Nie;
+
+ASK Priznaky : "Vykazuje Vas pes niektore z nasledujucich priznakov: castemocenie az       neovladatelne pomocovanie (vodnaty moc, ktoreho je nadmerne vela),extremny smad, extremna chut do jedla, slabost, unava?";
+
+CHOICES Priznaky : Vykazuje_1, Vykazuje_2_a_viac, Nevykazuje_ziadny;
+
+ASK Sprievodne_ochorenie : "Vyskytlo sa u Vasho psa niektore z nasledujucich sprievodnych ochoreni: 
+zakal oci, kozne ochorenie, zapal usi, zapal drapovych lozok alebo 
+abnormalne dosliapavanie ci skrivenie koncatin?";
+
+CHOICES Sprievodne_ochorenie : Ano, Nie;
+
+ASK Rizikovy_faktor : "Vyskytol sa u Vasho psa niektory z nasledujucichrizikovych faktorov 
+prispievajucich ku vzniku diabetu: pankreatititda,potravinova alergia, 
+zapal lieceny kortikosteroidmi, Cushingov syndrom, velkyprijem GMO, 
+caste crevne ochorenia alebo diety s nevyvazenou stravou?";
+
+CHOICES Rizikovy_faktor : Ano, Nie;
+
+
